@@ -1,0 +1,42 @@
+#ifndef __BREAKOUT_CORE_H__
+#define __BREAKOUT_CORE_H__
+
+#include "breakoutcore.h"
+
+Player player={
+    .barX=30,
+    .barY=28,
+    .ballX=30+2, // ボールの位置がバーの中心に来るように保管する
+    .ballY=27,
+};
+
+void Init(){
+    initscr();
+    noecho();
+    curs_set(0);
+    keypad(stdscr,true);
+    strcpy(player.ball_chara,"*");
+    strcpy(player.bar_chara,"-----");
+}
+
+void ShowTitle(){
+    mvprintw(15,15,"BREAKOUT");
+    mvprintw (12,18,"PUSH ANY KEY!!!");
+    getch();
+}
+
+void MainLoop()
+{
+    clear();
+    mvprintw(player.barY, player.barX, player.bar_chara);
+    mvprintw(player.ballY, player.ballX, player.ball_chara);
+    
+    getch();
+}
+
+void ExitGame(){
+    endwin();
+    exit(0);
+}
+
+#endif

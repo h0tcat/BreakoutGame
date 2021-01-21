@@ -32,13 +32,13 @@ namespace nori{
 			Player player;
 			std::string brick;
 			int score;
-
-			void ShowTItle();
+			
+			void ShowTitle();
 			void MainLoop();
 		public:
 			BreakoutGame();
 			~BreakoutGame();
-			
+			void Init();			
 			void Start();
 	};
 };

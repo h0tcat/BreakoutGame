@@ -1,3 +1,5 @@
+//ブロック崩しの内部
+
 #include "breakoutcore.h"
 
 nori::Ball::Ball(){
